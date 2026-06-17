@@ -39,8 +39,9 @@ const pillars = [
 export default function Experience() {
   return (
     <PublicLayout>
-      <Box sx={{ minHeight: { xs: 320, md: 440 }, background: 'linear-gradient(135deg, #2C3E50 0%, #1a2634 100%)', display: 'flex', alignItems: 'flex-end', flexShrink: 0 }}>
-        <Container maxWidth="xl" sx={{ pb: 6 }}>
+      {/* Hero Section */}
+      <Box sx={{ background: 'linear-gradient(135deg, #2C3E50 0%, #1a2634 100%)', minHeight: { xs: 320, md: 440 }, display: 'flex', alignItems: 'flex-end', width: '100%' }}>
+        <Container maxWidth="xl" sx={{ pb: 6, width: '100%' }}>
           <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 12, letterSpacing: 4, textTransform: 'uppercase', mb: 2 }}>The Patient Experience</Typography>
           <Typography variant="h1" sx={{ color: '#FDFBF7', fontSize: { xs: 28, md: 52 }, maxWidth: 700, lineHeight: 1.15, mb: 2 }}>
             A Sanctuary of Healing. World-Class Medical Care, Curated for Your Complete Comfort.
@@ -51,16 +52,28 @@ export default function Experience() {
         </Container>
       </Box>
 
-      <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: '#FDFBF7' }}>
-        <Container maxWidth="xl">
+      {/* Pillars Section */}
+      <Box sx={{ backgroundColor: '#FDFBF7', py: { xs: 6, md: 8 }, width: '100%' }}>
+        <Container maxWidth="xl" sx={{ width: '100%' }}>
           <Box sx={{ textAlign: 'center', mb: 10 }}>
             <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 12, letterSpacing: 4, textTransform: 'uppercase', mb: 2 }}>Our Hospitality Standards</Typography>
             <Typography variant="h3" sx={{ color: '#2C3E50', fontSize: { xs: 26, md: 38 } }}>The Pillars of Our Luxury Hospitality</Typography>
           </Box>
 
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+          <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 6, width: '100%' }}>
             {pillars.map((p) => (
-              <Box key={p.title} sx={{ flex: { xs: '1 1 100%', md: '1 1 calc(50% - 24px)' }, border: '1px solid rgba(212,175,55,0.25)', p: 4, borderRadius: 2, transition: 'box-shadow 0.3s', '&:hover': { boxShadow: '0 8px 40px rgba(44,62,80,0.12)' } }}>
+              <Box
+                key={p.title}
+                sx={{
+                  border: '1px solid rgba(212,175,55,0.25)',
+                  p: 4,
+                  borderRadius: 2,
+                  transition: 'box-shadow 0.3s',
+                  '&:hover': { boxShadow: '0 8px 40px rgba(44,62,80,0.12)' },
+                  display: 'flex',
+                  flexDirection: 'column'
+                }}
+              >
                 <Box sx={{ mb: 2 }}>{p.icon}</Box>
                 <Typography variant="h5" sx={{ color: '#2C3E50', mb: 2, fontSize: { xs: 18, md: 22 } }}>{p.title}</Typography>
                 <GoldDivider sx={{ mb: 2 }} />
@@ -68,7 +81,7 @@ export default function Experience() {
                 {p.bullets && p.bullets.map(b => (
                   <Box key={b} sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5, mb: 1.5 }}>
                     <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: '#D4AF37', mt: 0.8, flexShrink: 0 }} />
-                    <Typography variant="body2" sx={{ color: '#5a6a7a' }}>{b}</Typography>
+                    <Typography variant="body2" sx={{ color: '#5a6a7a', lineHeight: 1.6 }}>{b}</Typography>
                   </Box>
                 ))}
               </Box>
@@ -77,14 +90,19 @@ export default function Experience() {
         </Container>
       </Box>
 
-      <Box sx={{ py: 8, bgcolor: '#D4AF37', textAlign: 'center' }}>
-        <Container maxWidth="md">
+      {/* CTA Section */}
+      <Box sx={{ backgroundColor: '#D4AF37', py: 8, textAlign: 'center', width: '100%' }}>
+        <Container maxWidth="md" sx={{ width: '100%' }}>
           <Typography variant="h4" sx={{ color: '#2C3E50', mb: 2 }}>Experience the Rosen Health Difference</Typography>
           <Typography variant="body1" sx={{ color: '#2C3E50', mb: 4, fontFamily: 'Lato', opacity: 0.8 }}>
             Schedule a private tour and let us show you what truly exceptional women's healthcare feels like.
           </Typography>
-          <Button component={Link} to="/book" variant="contained"
-            sx={{ bgcolor: '#2C3E50', color: '#FDFBF7', '&:hover': { bgcolor: '#1a2634' }, px: 5 }}>
+          <Button
+            component={Link}
+            to="/book"
+            variant="contained"
+            sx={{ backgroundColor: '#2C3E50', color: '#FDFBF7', '&:hover': { backgroundColor: '#1a2634' }, px: 5 }}
+          >
             Schedule a Private Facility Tour
           </Button>
         </Container>

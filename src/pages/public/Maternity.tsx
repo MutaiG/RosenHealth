@@ -19,8 +19,9 @@ export default function Maternity() {
 
   return (
     <PublicLayout>
-      <Box sx={{ minHeight: { xs: 280, md: 380 }, background: 'linear-gradient(135deg, #2C3E50 0%, #1a2634 100%)', display: 'flex', alignItems: 'flex-end', flexShrink: 0 }}>
-        <Container maxWidth="xl" sx={{ pb: 6 }}>
+      {/* Hero Section */}
+      <Box sx={{ background: 'linear-gradient(135deg, #2C3E50 0%, #1a2634 100%)', minHeight: { xs: 280, md: 380 }, display: 'flex', alignItems: 'flex-end', width: '100%' }}>
+        <Container maxWidth="xl" sx={{ pb: 6, width: '100%' }}>
           <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 12, letterSpacing: 4, textTransform: 'uppercase', mb: 2 }}>Maternity</Typography>
           <Typography variant="h1" sx={{ color: '#FDFBF7', fontSize: { xs: 28, md: 48 }, maxWidth: 640, lineHeight: 1.15 }}>
             Premium Maternity Packages & Patient Guides
@@ -28,12 +29,18 @@ export default function Maternity() {
         </Container>
       </Box>
 
-      {/* GUIDE TABS */}
-      <Box sx={{ bgcolor: '#FDFBF7', borderBottom: '1px solid rgba(212,175,55,0.2)', flexShrink: 0 }}>
-        <Container maxWidth="xl">
-          <Tabs value={tab} onChange={(_, v) => setTab(v)}
+      {/* Tab Navigation */}
+      <Box sx={{ backgroundColor: '#FDFBF7', borderBottom: '1px solid rgba(212,175,55,0.2)', width: '100%' }}>
+        <Container maxWidth="xl" sx={{ width: '100%' }}>
+          <Tabs
+            value={tab}
+            onChange={(_, v) => setTab(v)}
             TabIndicatorProps={{ style: { backgroundColor: '#D4AF37', height: 2 } }}
-            sx={{ '& .MuiTab-root': { color: '#5a6a7a', fontFamily: 'Lato', letterSpacing: 1.5, fontSize: 12, textTransform: 'uppercase' }, '& .Mui-selected': { color: '#2C3E50 !important' } }}>
+            sx={{
+              '& .MuiTab-root': { color: '#5a6a7a', fontFamily: 'Lato', letterSpacing: 1.5, fontSize: 12, textTransform: 'uppercase' },
+              '& .Mui-selected': { color: '#2C3E50 !important' }
+            }}
+          >
             <Tab label="Laparoscopy Guide" />
             <Tab label="Hysteroscopy Guide" />
             <Tab label="Maternity FAQs" />
@@ -41,15 +48,16 @@ export default function Maternity() {
         </Container>
       </Box>
 
-      <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: '#FDFBF7' }}>
-        <Container maxWidth="xl">
+      {/* Content Section */}
+      <Box sx={{ backgroundColor: '#FDFBF7', py: { xs: 8, md: 10 }, pb: { xs: 12, md: 14 }, width: '100%', overflow: 'hidden' }}>
+        <Container maxWidth="xl" sx={{ width: '100%' }}>
           {tab === 0 && (
-            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 6 }}>
-              <Box sx={{ flex: 1 }}>
+            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 6, width: '100%' }}>
+              <Box sx={{ minWidth: 0 }}>
                 <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 12, letterSpacing: 4, textTransform: 'uppercase', mb: 2 }}>Guide 1</Typography>
                 <Typography variant="h4" sx={{ color: '#2C3E50', mb: 2 }}>Advanced Laparoscopy</Typography>
                 <GoldDivider sx={{ mb: 3 }} />
-                <Typography variant="body1" sx={{ color: '#5a6a7a', mb: 3 }}>
+                <Typography variant="body1" sx={{ color: '#5a6a7a', mb: 3, lineHeight: 1.8 }}>
                   Laparoscopy is a sophisticated, minimally invasive surgical technique that allows our specialists to examine and treat pelvic organs through tiny, discreet incisions (usually 5 to 10 millimeters).
                 </Typography>
                 {[
@@ -61,12 +69,12 @@ export default function Maternity() {
                 ].map(c => (
                   <Box key={c.label} sx={{ mb: 2, pl: 2, borderLeft: '2px solid rgba(212,175,55,0.4)' }}>
                     <Typography sx={{ color: '#2C3E50', fontWeight: 700, fontFamily: 'Lato', fontSize: 13, mb: 0.3 }}>{c.label}</Typography>
-                    <Typography variant="body2" sx={{ color: '#5a6a7a' }}>{c.body}</Typography>
+                    <Typography variant="body2" sx={{ color: '#5a6a7a', lineHeight: 1.6 }}>{c.body}</Typography>
                   </Box>
                 ))}
               </Box>
-              <Box sx={{ flex: 1 }}>
-                <Box sx={{ bgcolor: '#2C3E50', p: 4, borderRadius: 2 }}>
+              <Box sx={{ minWidth: 0 }}>
+                <Box sx={{ backgroundColor: '#2C3E50', p: 4, borderRadius: 2, height: 'fit-content' }}>
                   <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', mb: 2 }}>Luxury Recovery Advantage</Typography>
                   <Typography variant="h5" sx={{ color: '#FDFBF7', mb: 2 }}>Swift Recovery, Minimal Scarring</Typography>
                   <GoldDivider sx={{ mb: 3 }} />
@@ -79,12 +87,12 @@ export default function Maternity() {
           )}
 
           {tab === 1 && (
-            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 6 }}>
-              <Box sx={{ flex: 1 }}>
+            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 6, width: '100%' }}>
+              <Box sx={{ minWidth: 0 }}>
                 <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 12, letterSpacing: 4, textTransform: 'uppercase', mb: 2 }}>Guide 2</Typography>
                 <Typography variant="h4" sx={{ color: '#2C3E50', mb: 2 }}>Advanced Hysteroscopy</Typography>
                 <GoldDivider sx={{ mb: 3 }} />
-                <Typography variant="body1" sx={{ color: '#5a6a7a', mb: 3 }}>
+                <Typography variant="body1" sx={{ color: '#5a6a7a', mb: 3, lineHeight: 1.8 }}>
                   Hysteroscopy represents the absolute peak of gentle gynaecological care. A completely scarless procedure — no external incisions or cuts made to your body.
                 </Typography>
                 {[
@@ -95,12 +103,12 @@ export default function Maternity() {
                 ].map(c => (
                   <Box key={c.label} sx={{ mb: 2, pl: 2, borderLeft: '2px solid rgba(212,175,55,0.4)' }}>
                     <Typography sx={{ color: '#2C3E50', fontWeight: 700, fontFamily: 'Lato', fontSize: 13, mb: 0.3 }}>{c.label}</Typography>
-                    <Typography variant="body2" sx={{ color: '#5a6a7a' }}>{c.body}</Typography>
+                    <Typography variant="body2" sx={{ color: '#5a6a7a', lineHeight: 1.6 }}>{c.body}</Typography>
                   </Box>
                 ))}
               </Box>
-              <Box sx={{ flex: 1 }}>
-                <Box sx={{ bgcolor: '#2C3E50', p: 4, borderRadius: 2 }}>
+              <Box sx={{ minWidth: 0 }}>
+                <Box sx={{ backgroundColor: '#2C3E50', p: 4, borderRadius: 2, height: 'fit-content' }}>
                   <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', mb: 2 }}>Luxury Recovery Advantage</Typography>
                   <Typography variant="h5" sx={{ color: '#FDFBF7', mb: 2 }}>Same Day. Zero Downtime.</Typography>
                   <GoldDivider sx={{ mb: 3 }} />
@@ -113,23 +121,26 @@ export default function Maternity() {
           )}
 
           {tab === 2 && (
-            <Box sx={{ maxWidth: 800, mx: 'auto' }}>
+            <Box sx={{ maxWidth: 800, mx: 'auto', width: '100%' }}>
               <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 12, letterSpacing: 4, textTransform: 'uppercase', mb: 2 }}>Premium Maternity</Typography>
               <Typography variant="h4" sx={{ color: '#2C3E50', mb: 3 }}>Frequently Asked Questions</Typography>
-              <GoldDivider sx={{ mb: 4 }} />
+              <GoldDivider sx={{ width: 60, mb: 4 }} />
               <FAQAccordion category="Maternity" staticItems={maternityFAQs} />
             </Box>
           )}
         </Container>
       </Box>
 
-      {/* CTA */}
-      <Box sx={{ py: 8, bgcolor: '#2C3E50', textAlign: 'center' }}>
-        <Container maxWidth="md">
+      {/* CTA Section */}
+      <Box sx={{ backgroundColor: '#2C3E50', py: 8, textAlign: 'center', width: '100%' }}>
+        <Container maxWidth="md" sx={{ width: '100%' }}>
           <Typography variant="h4" sx={{ color: '#FDFBF7', mb: 3 }}>Ready to Begin Your Journey?</Typography>
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Button onClick={downloadBrochure} variant="outlined"
-              sx={{ borderColor: '#D4AF37', color: '#D4AF37', '&:hover': { bgcolor: 'rgba(212,175,55,0.1)', borderColor: '#D4AF37' } }}>
+            <Button
+              onClick={downloadBrochure}
+              variant="outlined"
+              sx={{ borderColor: '#D4AF37', color: '#D4AF37', '&:hover': { bgcolor: 'rgba(212,175,55,0.1)', borderColor: '#D4AF37' } }}
+            >
               Download Maternity Brochure
             </Button>
             <Button component={Link} to="/book" variant="contained" color="secondary">

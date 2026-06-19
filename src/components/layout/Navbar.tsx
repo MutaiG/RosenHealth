@@ -88,7 +88,7 @@ export default function Navbar() {
       </AppBar>
 
       <Drawer anchor="right" open={open} onClose={() => setOpen(false)}
-        PaperProps={{ sx: { width: 280, bgcolor: '#2C3E50' } }}>
+        PaperProps={{ sx: { width: 280, bgcolor: '#328283' } }}>
         <Box sx={{ p: 2, display: 'flex', justifyContent: 'flex-end' }}>
           <IconButton onClick={() => setOpen(false)} sx={{ color: '#FDFBF7' }}><CloseIcon /></IconButton>
         </Box>

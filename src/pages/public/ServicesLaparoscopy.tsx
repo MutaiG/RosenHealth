@@ -3,7 +3,7 @@ import { Box, Container, Typography, Button, Card, CardContent } from '@mui/mate
 import PublicLayout from '../../components/layout/PublicLayout';
 import GoldDivider from '../../components/ui/GoldDivider';
 
-const conditions = [
+const indications = [
   { label: 'Uterine Fibroids (Myomectomy)', body: 'Elegant removal of fibroids while completely preserving your uterus and future fertility.' },
   { label: 'Ovarian Cysts', body: 'Precise excision of cysts while carefully protecting healthy ovarian tissue.' },
   { label: 'Endometriosis & Pelvic Adhesions', body: 'Advanced ablation or excision of painful endometrial tissue to restore pelvic health and alleviate chronic pain.' },
@@ -15,7 +15,7 @@ export default function ServicesLaparoscopy() {
   return (
     <PublicLayout>
       {/* Hero Section */}
-      <Box sx={{ background: 'linear-gradient(135deg, #2C3E50 0%, #1a2634 100%)', minHeight: { xs: 280, md: 380 }, display: 'flex', alignItems: 'flex-end', width: '100%' }}>
+      <Box sx={{ backgroundImage: 'linear-gradient(135deg, rgba(44,62,80,0.4) 0%, rgba(26,38,52,0.4) 100%), url(/rosen_image.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: { xs: 'scroll', md: 'fixed' }, minHeight: { xs: 330, md: 420 }, display: 'flex', alignItems: 'flex-end', width: '100%' }}>
         <Container maxWidth="xl" sx={{ pb: 6, width: '100%' }}>
           <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 12, letterSpacing: 4, textTransform: 'uppercase', mb: 2 }}>Gynaecological MIS</Typography>
           <Typography variant="h1" sx={{ color: '#FDFBF7', fontSize: { xs: 28, md: 48 }, maxWidth: 600, lineHeight: 1.15 }}>
@@ -36,9 +36,9 @@ export default function ServicesLaparoscopy() {
               <Typography variant="body1" sx={{ color: '#5a6a7a', mb: 3, lineHeight: 1.8 }}>
                 Laparoscopy is a sophisticated, minimally invasive surgical technique that allows our specialists to examine and treat pelvic organs through tiny, discreet incisions (usually 5 to 10 millimeters). Utilizing an ultra-high-definition camera (laparoscope) and specialized, microscopic instruments, our surgeons perform intricate procedures with maximum precision.
               </Typography>
-              <Typography variant="h5" sx={{ color: '#2C3E50', mt: 5, mb: 3 }}>Conditions We Treat Artfully</Typography>
+              <Typography variant="h5" sx={{ color: '#2C3E50', mt: 5, mb: 3 }}>Indications for Laparoscopy</Typography>
               <GoldDivider sx={{ mb: 3 }} />
-              {conditions.map((c) => (
+              {indications.map((c) => (
                 <Box key={c.label} sx={{ mb: 2.5, pl: 2, borderLeft: '2px solid rgba(212,175,55,0.4)' }}>
                   <Typography sx={{ color: '#2C3E50', fontWeight: 700, fontFamily: 'Lato', fontSize: 14, mb: 0.5 }}>{c.label}</Typography>
                   <Typography variant="body2" sx={{ color: '#5a6a7a', lineHeight: 1.6 }}>{c.body}</Typography>

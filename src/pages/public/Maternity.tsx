@@ -6,6 +6,13 @@ import FAQAccordion from '../../features/FAQAccordion/FAQAccordion';
 import GoldDivider from '../../components/ui/GoldDivider';
 import { downloadBrochure } from '../../api/auth';
 
+const maternityInfo = [
+  { title: 'Antenatal (Pregnancy Care)', body: 'Our antenatal care is designed to offer absolute reassurance at every milestone. It includes regular, unhurried consultations with our elite obstetricians, routine and high-resolution fetal ultrasounds, comprehensive prenatal laboratory profiles, nutritional counseling, and private birth-planning sessions. We ensure you feel informed, confident, and deeply supported from conception to delivery.' },
+  { title: 'Labor & Delivery Support', body: 'Whether you choose or require a Normal Vaginal Delivery (NVD) or a planned/emergency Cesarean Section, you will receive the highest standard of care. Our advanced intrapartum pain management team is always available to ensure your absolute comfort, with surgical suites permanently on standby.' },
+  { title: 'Postnatal Maternal Care', body: 'Your postnatal recovery is as important as the delivery itself. Our 24/7 dedicated nursing support ensures comprehensive healing. We provide private lactation and breastfeeding masterclasses with certified specialists, emotional wellbeing support, and a comprehensive maternal healing check-up before you smoothly transition home.' },
+  { title: 'Essential Newborn Care', body: 'Our neonatal specialists provide comprehensive newborn screening, routine vaccinations, umbilical cord care, feeding support, and jaundice monitoring. Every infant receives meticulous daily clinical assessment and seamless mother-baby bonding within our fully equipped, private neonate care stations located within your suite.' },
+];
+
 const maternityFAQs = [
   { question: "What distinguishes Rosen Health's Maternity Packages from traditional hospital stays?", answer: "We view childbirth as a sacred, joyous life milestone rather than a purely clinical event. Our packages merge uncompromising clinical safety with the tailored amenities of a five-star luxury hotel. Every mother stays in an expansive, private boutique suite designed for serene rest. Your care is fully individualized, featuring dedicated luxury nursing ratios, premium organic maternity linens, and a tranquil atmosphere free from chaotic hospital noise." },
   { question: "What is included in your Antenatal (Pregnancy Care) Track?", answer: "Our antenatal care is designed to offer absolute reassurance at every milestone. It includes regular, unhurried consultations with our elite obstetricians, routine and high-resolution fetal ultrasounds, comprehensive prenatal laboratory profiles, nutritional counseling, and private birth-planning sessions. We ensure you feel informed, confident, and deeply supported from conception to delivery." },
@@ -20,7 +27,7 @@ export default function Maternity() {
   return (
     <PublicLayout>
       {/* Hero Section */}
-      <Box sx={{ background: 'linear-gradient(135deg, #2C3E50 0%, #1a2634 100%)', minHeight: { xs: 280, md: 380 }, display: 'flex', alignItems: 'flex-end', width: '100%' }}>
+      <Box sx={{ backgroundImage: 'linear-gradient(135deg, rgba(44,62,80,0.4) 0%, rgba(26,38,52,0.4) 100%), url(/rosen_image.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: { xs: 'scroll', md: 'fixed' }, minHeight: { xs: 330, md: 420 }, display: 'flex', alignItems: 'flex-end', width: '100%' }}>
         <Container maxWidth="xl" sx={{ pb: 6, width: '100%' }}>
           <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 12, letterSpacing: 4, textTransform: 'uppercase', mb: 2 }}>Maternity</Typography>
           <Typography variant="h1" sx={{ color: '#FDFBF7', fontSize: { xs: 28, md: 48 }, maxWidth: 640, lineHeight: 1.15 }}>
@@ -41,9 +48,9 @@ export default function Maternity() {
               '& .Mui-selected': { color: '#2C3E50 !important' }
             }}
           >
+            <Tab label="Maternity" />
             <Tab label="Laparoscopy Guide" />
             <Tab label="Hysteroscopy Guide" />
-            <Tab label="Maternity FAQs" />
           </Tabs>
         </Container>
       </Box>
@@ -52,6 +59,31 @@ export default function Maternity() {
       <Box sx={{ backgroundColor: '#FDFBF7', py: { xs: 8, md: 10 }, pb: { xs: 12, md: 14 }, width: '100%', overflow: 'hidden' }}>
         <Container maxWidth="xl" sx={{ width: '100%' }}>
           {tab === 0 && (
+            <Box sx={{ width: '100%' }}>
+              <Box sx={{ mb: 10 }}>
+                <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 12, letterSpacing: 4, textTransform: 'uppercase', mb: 2 }}>Premium Maternity</Typography>
+                <Typography variant="h4" sx={{ color: '#2C3E50', mb: 3 }}>Comprehensive Maternity Information</Typography>
+                <GoldDivider sx={{ width: 60, mb: 5 }} />
+                <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 4, mb: 8 }}>
+                  {maternityInfo.map((info) => (
+                    <Box key={info.title} sx={{ p: 4, backgroundColor: '#f5f3f0', borderLeft: '3px solid #D4AF37' }}>
+                      <Typography variant="h6" sx={{ color: '#2C3E50', mb: 2, fontWeight: 700 }}>{info.title}</Typography>
+                      <Typography variant="body2" sx={{ color: '#5a6a7a', lineHeight: 1.8 }}>{info.body}</Typography>
+                    </Box>
+                  ))}
+                </Box>
+              </Box>
+
+              <Box sx={{ maxWidth: 800, mx: 'auto', width: '100%' }}>
+                <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 12, letterSpacing: 4, textTransform: 'uppercase', mb: 2 }}>Common Questions</Typography>
+                <Typography variant="h4" sx={{ color: '#2C3E50', mb: 3 }}>Frequently Asked Questions</Typography>
+                <GoldDivider sx={{ width: 60, mb: 4 }} />
+                <FAQAccordion category="Maternity" staticItems={maternityFAQs} />
+              </Box>
+            </Box>
+          )}
+
+          {tab === 1 && (
             <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 6, width: '100%' }}>
               <Box sx={{ minWidth: 0 }}>
                 <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 12, letterSpacing: 4, textTransform: 'uppercase', mb: 2 }}>Guide 1</Typography>
@@ -74,7 +106,7 @@ export default function Maternity() {
                 ))}
               </Box>
               <Box sx={{ minWidth: 0 }}>
-                <Box sx={{ backgroundColor: '#2C3E50', p: 4, borderRadius: 2, height: 'fit-content' }}>
+                <Box sx={{ backgroundColor: '#328283', p: 4, borderRadius: 2, height: 'fit-content' }}>
                   <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', mb: 2 }}>Luxury Recovery Advantage</Typography>
                   <Typography variant="h5" sx={{ color: '#FDFBF7', mb: 2 }}>Swift Recovery, Minimal Scarring</Typography>
                   <GoldDivider sx={{ mb: 3 }} />
@@ -86,7 +118,7 @@ export default function Maternity() {
             </Box>
           )}
 
-          {tab === 1 && (
+          {tab === 2 && (
             <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 6, width: '100%' }}>
               <Box sx={{ minWidth: 0 }}>
                 <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 12, letterSpacing: 4, textTransform: 'uppercase', mb: 2 }}>Guide 2</Typography>
@@ -108,7 +140,7 @@ export default function Maternity() {
                 ))}
               </Box>
               <Box sx={{ minWidth: 0 }}>
-                <Box sx={{ backgroundColor: '#2C3E50', p: 4, borderRadius: 2, height: 'fit-content' }}>
+                <Box sx={{ backgroundColor: '#328283', p: 4, borderRadius: 2, height: 'fit-content' }}>
                   <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', mb: 2 }}>Luxury Recovery Advantage</Typography>
                   <Typography variant="h5" sx={{ color: '#FDFBF7', mb: 2 }}>Same Day. Zero Downtime.</Typography>
                   <GoldDivider sx={{ mb: 3 }} />
@@ -119,20 +151,11 @@ export default function Maternity() {
               </Box>
             </Box>
           )}
-
-          {tab === 2 && (
-            <Box sx={{ maxWidth: 800, mx: 'auto', width: '100%' }}>
-              <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 12, letterSpacing: 4, textTransform: 'uppercase', mb: 2 }}>Premium Maternity</Typography>
-              <Typography variant="h4" sx={{ color: '#2C3E50', mb: 3 }}>Frequently Asked Questions</Typography>
-              <GoldDivider sx={{ width: 60, mb: 4 }} />
-              <FAQAccordion category="Maternity" staticItems={maternityFAQs} />
-            </Box>
-          )}
         </Container>
       </Box>
 
       {/* CTA Section */}
-      <Box sx={{ backgroundColor: '#2C3E50', py: 8, textAlign: 'center', width: '100%' }}>
+      <Box sx={{ backgroundColor: '#328283', py: 8, textAlign: 'center', width: '100%' }}>
         <Container maxWidth="md" sx={{ width: '100%' }}>
           <Typography variant="h4" sx={{ color: '#FDFBF7', mb: 3 }}>Ready to Begin Your Journey?</Typography>
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>

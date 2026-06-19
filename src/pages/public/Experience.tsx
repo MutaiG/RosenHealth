@@ -40,7 +40,7 @@ export default function Experience() {
   return (
     <PublicLayout>
       {/* Hero Section */}
-      <Box sx={{ background: 'linear-gradient(135deg, #2C3E50 0%, #1a2634 100%)', minHeight: { xs: 320, md: 440 }, display: 'flex', alignItems: 'flex-end', width: '100%' }}>
+      <Box sx={{ backgroundImage: 'linear-gradient(135deg, rgba(44,62,80,0.4) 0%, rgba(26,38,52,0.4) 100%), url(/rosen_image.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: { xs: 'scroll', md: 'fixed' }, minHeight: { xs: 370, md: 480 }, display: 'flex', alignItems: 'flex-end', width: '100%' }}>
         <Container maxWidth="xl" sx={{ pb: 6, width: '100%' }}>
           <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 12, letterSpacing: 4, textTransform: 'uppercase', mb: 2 }}>The Patient Experience</Typography>
           <Typography variant="h1" sx={{ color: '#FDFBF7', fontSize: { xs: 28, md: 52 }, maxWidth: 700, lineHeight: 1.15, mb: 2 }}>
@@ -91,17 +91,17 @@ export default function Experience() {
       </Box>
 
       {/* CTA Section */}
-      <Box sx={{ backgroundColor: '#D4AF37', py: 8, textAlign: 'center', width: '100%' }}>
+      <Box sx={{ backgroundColor: '#2C3E50', py: 8, textAlign: 'center', width: '100%' }}>
         <Container maxWidth="md" sx={{ width: '100%' }}>
-          <Typography variant="h4" sx={{ color: '#2C3E50', mb: 2 }}>Experience the Rosen Health Difference</Typography>
-          <Typography variant="body1" sx={{ color: '#2C3E50', mb: 4, fontFamily: 'Lato', opacity: 0.8 }}>
+          <Typography variant="h4" sx={{ color: '#D4AF37', mb: 2 }}>Experience the Rosen Health Difference</Typography>
+          <Typography variant="body1" sx={{ color: '#FDFBF7', mb: 4, fontFamily: 'Lato', opacity: 0.8 }}>
             Schedule a private tour and let us show you what truly exceptional women's healthcare feels like.
           </Typography>
           <Button
             component={Link}
             to="/book"
             variant="contained"
-            sx={{ backgroundColor: '#2C3E50', color: '#FDFBF7', '&:hover': { backgroundColor: '#1a2634' }, px: 5 }}
+            sx={{ backgroundColor: '#D4AF37', color: '#2C3E50', '&:hover': { backgroundColor: '#c9a227' }, px: 5 }}
           >
             Schedule a Private Facility Tour
           </Button>

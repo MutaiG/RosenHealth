@@ -32,7 +32,7 @@ export default function Navbar() {
         sx={{
           bgcolor: scrolled ? 'primary.main' : 'transparent',
           backdropFilter: scrolled ? 'none' : 'blur(8px)',
-          backgroundColor: scrolled ? '#2C3E50' : 'rgba(44,62,80,0.85)',
+          backgroundColor: scrolled ? '#328283' : 'rgba(50,130,131,0.85)',
           transition: 'all 0.3s ease',
           zIndex: 1100,
         }}
@@ -45,8 +45,8 @@ export default function Navbar() {
                 src={rosenLogo}
                 alt="Rosen Health Logo"
                 sx={{
-                  height: { xs: 38, sm: 44 },
-                  width: { xs: 38, sm: 44 },
+                  height: { xs: 48, sm: 56 },
+                  width: { xs: 48, sm: 56 },
                   objectFit: 'cover',
                   borderRadius: '50%',
                   border: '2px solid #D4AF37',

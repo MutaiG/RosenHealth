@@ -8,8 +8,8 @@ export default function EmergencyCallBlock() {
     <Box
       sx={{
         position: 'fixed', bottom: 24, right: 24, zIndex: 999,
-        bgcolor: '#2C3E50', border: '2px solid #D4AF37',
-        borderRadius: 2, p: 2, boxShadow: '0 8px 32px rgba(44,62,80,0.4)',
+        bgcolor: '#328283', border: '2px solid #D4AF37',
+        borderRadius: 2, p: 2, boxShadow: '0 8px 32px rgba(50,130,131,0.4)',
         display: { xs: 'flex', md: 'none' },
         flexDirection: 'column', alignItems: 'center', gap: 0.5,
         minWidth: 200,

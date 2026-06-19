@@ -25,8 +25,12 @@ export default function Home() {
     <PublicLayout>
       {/* HERO */}
       <Box sx={{
-        minHeight: '100vh', display: 'flex', alignItems: 'center',
-        background: 'linear-gradient(135deg, #2C3E50 0%, #1a2634 60%, #2C3E50 100%)',
+        minHeight: { xs: '80vh', sm: '90vh', md: '100vh' },
+        display: 'flex', alignItems: 'center',
+        backgroundImage: 'linear-gradient(135deg, rgba(50,130,131,0.4) 0%, rgba(26,38,52,0.4) 60%, rgba(50,130,131,0.4) 100%), url(/rosen_image.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: { xs: 'scroll', md: 'fixed' },
         position: 'relative', overflow: 'hidden',
       }}>
         <Box sx={{ position: 'absolute', inset: 0, opacity: 0.04,
@@ -54,7 +58,7 @@ export default function Home() {
                 Book a Consultation
               </Button>
               <Button component={Link} to="/about" variant="outlined" size="large"
-                sx={{ borderColor: '#D4AF37', color: '#FDFBF7', '&:hover': { borderColor: '#D4AF37', bgcolor: 'rgba(212,175,55,0.1)' } }}>
+                sx={{ borderColor: '#2C3E50', color: '#FDFBF7', '&:hover': { borderColor: '#2C3E50', bgcolor: 'rgba(44,62,80,0.1)' } }}>
                 Tour the Facility
               </Button>
             </Box>
@@ -95,7 +99,7 @@ export default function Home() {
       </Box>
 
       {/* PROMISE */}
-      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: '#2C3E50' }}>
+      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: '#328283' }}>
         <Container maxWidth="xl">
           <Box sx={{ textAlign: 'center', mb: 8 }}>
             <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 12, letterSpacing: 4, textTransform: 'uppercase', mb: 2 }}>Why Patients Choose Us</Typography>
@@ -116,14 +120,14 @@ export default function Home() {
       </Box>
 
       {/* CTA STRIP */}
-      <Box sx={{ py: 8, bgcolor: '#D4AF37', textAlign: 'center' }}>
+      <Box sx={{ py: 8, bgcolor: '#2C3E50', textAlign: 'center' }}>
         <Container maxWidth="md">
-          <Typography variant="h4" sx={{ color: '#2C3E50', mb: 2 }}>Begin Your Journey With Us</Typography>
-          <Typography variant="body1" sx={{ color: '#2C3E50', mb: 4, fontFamily: 'Lato', opacity: 0.8 }}>
+          <Typography variant="h4" sx={{ color: '#D4AF37', mb: 2 }}>Begin Your Journey With Us</Typography>
+          <Typography variant="body1" sx={{ color: '#FDFBF7', mb: 4, fontFamily: 'Lato', opacity: 0.8 }}>
             Schedule a private consultation or tour our facility. Your peace of mind is our highest priority.
           </Typography>
           <Button component={Link} to="/book" variant="contained"
-            sx={{ bgcolor: '#2C3E50', color: '#FDFBF7', '&:hover': { bgcolor: '#1a2634' }, fontSize: 13, px: 5 }}>
+            sx={{ bgcolor: '#D4AF37', color: '#2C3E50', '&:hover': { bgcolor: '#c9a227' }, fontSize: 13, px: 5 }}>
             Schedule a Private Consultation
           </Button>
         </Container>

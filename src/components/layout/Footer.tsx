@@ -9,7 +9,7 @@ const EMERGENCY = import.meta.env.VITE_EMERGENCY_PHONE || '+254 700 000 000';
 
 export default function Footer() {
   return (
-    <Box sx={{ bgcolor: '#2C3E50', color: '#FDFBF7', pt: 8, pb: 4, position: 'relative', zIndex: 100, flexShrink: 0 }}>
+    <Box sx={{ bgcolor: '#328283', color: '#FDFBF7', pt: 8, pb: 4, position: 'relative', zIndex: 100, flexShrink: 0 }}>
       <Container maxWidth="xl">
         <Grid container spacing={6}>
           <Grid item xs={12} md={4}>
@@ -19,8 +19,8 @@ export default function Footer() {
                 src={rosenLogo}
                 alt="Rosen Health Logo"
                 sx={{
-                  height: 44,
-                  width: 44,
+                  height: 56,
+                  width: 56,
                   objectFit: 'cover',
                   borderRadius: '50%',
                   border: '2px solid #D4AF37',

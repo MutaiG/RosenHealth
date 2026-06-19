@@ -38,7 +38,7 @@ export default function AdminLayout() {
   };
 
   const drawer = (
-    <Box sx={{ bgcolor: '#2C3E50', height: '100%', display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{ bgcolor: '#328283', height: '100%', display: 'flex', flexDirection: 'column' }}>
       <Box sx={{ p: 3, display: 'flex', alignItems: 'center', gap: 1.5 }}>
         <Box sx={{ width: 36, height: 36, borderRadius: '50%', bgcolor: '#D4AF37', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 16, color: '#2C3E50', fontFamily: 'serif' }}>R</Box>
         <Box>

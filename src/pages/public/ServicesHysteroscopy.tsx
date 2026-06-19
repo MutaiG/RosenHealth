@@ -14,7 +14,7 @@ export default function ServicesHysteroscopy() {
   return (
     <PublicLayout>
       {/* Hero Section */}
-      <Box sx={{ background: 'linear-gradient(135deg, #2C3E50 0%, #1a2634 100%)', minHeight: { xs: 280, md: 380 }, display: 'flex', alignItems: 'flex-end', width: '100%' }}>
+      <Box sx={{ backgroundImage: 'linear-gradient(135deg, rgba(44,62,80,0.4) 0%, rgba(26,38,52,0.4) 100%), url(/rosen_image.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: { xs: 'scroll', md: 'fixed' }, minHeight: { xs: 330, md: 420 }, display: 'flex', alignItems: 'flex-end', width: '100%' }}>
         <Container maxWidth="xl" sx={{ pb: 6, width: '100%' }}>
           <Typography sx={{ color: '#D4AF37', fontFamily: 'Lato', fontSize: 12, letterSpacing: 4, textTransform: 'uppercase', mb: 2 }}>Gynaecological MIS</Typography>
           <Typography variant="h1" sx={{ color: '#FDFBF7', fontSize: { xs: 28, md: 48 }, maxWidth: 600, lineHeight: 1.15 }}>
@@ -35,7 +35,7 @@ export default function ServicesHysteroscopy() {
               <Typography variant="body1" sx={{ color: '#5a6a7a', mb: 3, lineHeight: 1.8 }}>
                 Hysteroscopy represents the absolute peak of gentle gynaecological care. It is a completely scarless procedure where a slender, lighted telescope is guided gently through the natural opening of the cervix. There are absolutely no external incisions or cuts made to your body. This allows our specialists to view, diagnose, and treat conditions directly inside the uterine cavity.
               </Typography>
-              <Typography variant="h5" sx={{ color: '#2C3E50', mt: 5, mb: 3 }}>Conditions We Treat Artfully</Typography>
+              <Typography variant="h5" sx={{ color: '#2C3E50', mt: 5, mb: 3 }}>Indications for Hysteroscopy</Typography>
               <GoldDivider sx={{ mb: 3 }} />
               {conditions.map((c) => (
                 <Box key={c.label} sx={{ mb: 2.5, pl: 2, borderLeft: '2px solid rgba(212,175,55,0.4)' }}>

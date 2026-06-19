@@ -15,7 +15,7 @@ export default function Book() {
       <Box sx={{ bgcolor: '#FDFBF7' }}>
         <Grid container sx={{ minHeight: '100vh' }}>
           {/* LEFT — FORM */}
-          <Grid item xs={12} md={6} sx={{ bgcolor: '#2C3E50', p: { xs: 4, md: 8 }, pt: { xs: 8, md: 12 } }}>
+          <Grid item xs={12} md={6} sx={{ bgcolor: '#328283', p: { xs: 4, md: 8 }, pt: { xs: 8, md: 12 } }}>
             <BookingForm />
           </Grid>
 
